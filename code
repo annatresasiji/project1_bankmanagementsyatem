@@ -1,0 +1,56 @@
+class BankAccount:
+    def _init_(self, account_number, account_holder, initial_balance):
+        """
+        Initializes a BankAccount object.
+
+        Args:
+            account_number (str): The account number.
+            account_holder (str): The name of the account holder.
+            initial_balance (float): The initial balance for the account.
+        """
+        self.account_number = account_number
+        # Initializes the account_number attribute of the BankAccount object with
+        #the provided value.
+
+        self.account_holder = account_holder
+        # Initializes the account_holder attribute of the BankAccount object with
+        #the provided value.
+
+        self.balance = initial_balance
+        # Initializes the balance attribute of the BankAccount object with
+        #the provided initial balance.
+
+    def deposit(self, amount):
+        """
+        Deposits funds into the account.
+
+        Args:
+            amount (float): The amount to be deposited.
+        """
+        if amount > 0:
+            self.balance += amount
+        # Checks if the provided amount is greater than 0.
+        # If true, adds the amount to the current balance of the BankAccount object.
+
+    def withdraw(self, amount):
+        """
+        Withdraws funds from the account.
+
+        Args:
+            amount (float): The amount to be withdrawn.
+        """
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+        # Checks if the provided amount is greater than 0 and less than or
+        #equal to the current balance.
+        # If true, subtracts the amount from the current balance of the BankAccount object.
+
+    def get_balance(self):
+        """
+        Retrieves the current balance of the account.
+
+        Returns:
+            float: The account balance.
+        """
+        return self.balance
+        # Returns the value of the balance attribute of the BankAccount object.
